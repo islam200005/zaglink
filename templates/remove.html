@@ -1,0 +1,40 @@
+{% extends "layout.html"%}
+
+
+{%block form%}
+<div class="rm-content">
+    {%if message%}
+        <div class="alert alert-success" role="alert" style="text-align: center;font-size: 15px;">
+                <strong>{{message}}</strong> 
+        </div>
+    {%endif%}
+    <div class="n-container">
+        <div class="rm-form">
+            
+                <form action="/remove" method="POST">
+                    <select name="subject" >
+                        <option value="" disabled selected>Subject</option>
+                        <option value="math"  >Math</option>
+                        <option value="heat"  >Heat</option>
+                        <option value="production"  >Production</option>
+                        <option value="machine"  >Machine</option>
+                        <option value="stress"  >Stress</option>
+                        <option value="hr" >Hr</option>
+                    </select>
+                    <input type="text" name="shrinked" id="" placeholder="Shorten link" >
+                    <input type="text" name="code" id="" placeholder="Code" >
+                    
+                    <input type="submit" value="Delete" >
+                    
+                    
+                    <button type="button" class="btn btn-primary" onclick="window.location.href='/home';">Add Link</button>
+            
+                    <button type="button" class="btn btn-primary" onclick="window.location.href='/search';">Find Link</button>
+
+                
+                </form>
+        </div>
+
+    </div>
+</div>
+{%endblock%}

@@ -1,0 +1,42 @@
+{% extends "layout.html"%}
+
+
+{%block form%}
+<div class="search-content">
+    {%if message%}
+        <div class="alert alert-success" role="alert" style="text-align: center;font-size: 15px;">
+                <strong>{{message}}</strong> 
+        </div>
+    {%endif%}
+    <div class="n-container">
+        <div class="search-form">
+            
+                <form action="/search" method="post">
+                    <select name="subject" >
+                        <option value="" disabled selected>Subject</option>
+                        <option value="math"  >Math</option>
+                        <option value="heat"  >Heat</option>
+                        <option value="production"  >Production</option>
+                        <option value="machine"  >Machine</option>
+                        <option value="stress"  >Stress</option>
+                        <option value="hr" >Hr</option>
+                    </select>
+                    <input type="text" name="code" id="" placeholder="Code" value="{{code}}" >
+                    <input type="text" name="shrinked" id="" placeholder="Shorten Link" value="{{shrinked}}" > 
+                    <input type="submit" value="search"  onclick="showSwal('auto-close')">
+                   
+                   
+                    
+                    
+                    <button type="button" class="btn btn-primary" onclick="window.location.href='/home';">Shrink Link</button>
+    
+                    <button type="button" class="btn btn-primary" onclick="window.location.href='/remove';">Delete Link</button>
+    
+                    
+                </form>
+        </div>
+    </div>
+    </div>
+</div>
+        
+{%endblock%}

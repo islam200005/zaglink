@@ -1,0 +1,44 @@
+{% extends "layout.html"%}
+
+{%block form%}
+<div class="add-content">
+    {%if message%}
+        <div class="alert alert-success" role="alert" style="text-align: center;font-size: 15px;">
+                <strong>{{message}}</strong> 
+        </div>
+    {%endif%}
+              
+    <div class="n-container">
+        
+        <div class="add-form">
+            <form action="/" method="post">
+                <select name="subject" >
+                    <option value="" disabled selected>Subject</option>
+                    <option value="math"  >Math</option>
+                    <option value="heat"  >Heat</option>
+                    <option value="production"  >Production</option>
+                    <option value="machine"  >Machine</option>
+                    <option value="stress"  >Stress</option>
+                    <option value="hr" >Hr</option>
+                </select>
+                <input type="text" name="link" id="" placeholder="Your link" required value="{{link}}"> 
+                <input type="text" name="code" id="" placeholder="Code" required value="{{code}}">
+                <input type="text" name="description" id="" placeholder="Description" value="{{description}}">
+                <input type="submit" value="Shrink"  onclick="showSwal('auto-close')">
+                <input type="text" name="shrinked" id="myInput" disabled placeholder="Shrinked link" value="{{shrinked}}">
+                <div class="new-copy">
+                    <button type="button"  class="btn btn-dark" onclick="myFunction()">Copy</button>
+                    <button type="button" class="btn btn-dark" onclick="window.location.href='/';">New</button>
+                </div>
+                <button type="button" class="btn btn-primary" onclick="window.location.href='/search';">Find Link</button>
+
+                <button type="button" class="btn btn-primary" onclick="window.location.href='/remove';">Delete Link</button>
+
+                
+            </form>
+        </div>
+
+    </div>
+</div>
+        
+{%endblock%}
